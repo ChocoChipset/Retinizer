@@ -34,7 +34,9 @@ end
 
 targetDirectory = ARGV[0] ? ARGV[0] : "./"		# If no argument is supplied we use the current directory (.)
 
-#TODO: Add '/' if not at the end of targetDirectory
+unless targetDirectory.end_with?("/")
+    targetDirectory += "/"
+end
 
 abort ("Error: #{targetDirectory} is not a directory") unless File.directory?(targetDirectory) 
 
@@ -61,7 +63,7 @@ targetFilenames.each do |originalImageFilename|
     
     retinaImageBasename = File.basename(retinaImageFilename, ".*")
     
-    if retinaImageBasename.length > retinaFilenameSuffix.length
+    if retinaImageBasename.length > retinaFilenameSuffix.length # avoiding a filename without name. :S
         standardImageBaseName = retinaImageBasename[0...(retinaImageBasename.length - retinaFilenameSuffix.length)]
         standardImageFilename = "#{targetDirectory}#{standardImageBaseName}#{File.extname(retinaImageFilename)}"
         FileUtils.cp_r(retinaImageFilename, standardImageFilename, :remove_destination => true)
