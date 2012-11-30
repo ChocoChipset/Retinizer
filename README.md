@@ -11,11 +11,11 @@ Given a directory path:
 ## Usage 
 1. Install the __RMagick__ gem. [This script](https://github.com/maddox/magick-installer) may help mac users.
 
-	gem install rmagick
+    gem install rmagick
 
 1. Execute Retinizer script. First argument is the directory to operate. If no argument is supplied, operations will take place in current directory. 
 
-	ruby Retinizer.rb /ExampleDirectory/FullOfImages/
+    ruby Retinizer.rb /ExampleDirectory/FullOfImages/
 
 1. Enjoy Retina and standard resolutions for your iOS projects. :Fuck Yeah:
 
