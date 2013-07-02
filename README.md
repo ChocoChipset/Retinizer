@@ -12,7 +12,7 @@ Given a directory path:
 1. Install the __RMagick__ gem. [This script](https://github.com/maddox/magick-installer) may help mac users.
     
     ````
-    gem install rmagick
+    sudo gem install rmagick
     ````
 
 2. Execute Retinizer script. First argument is the directory to operate. If no argument is supplied, operations will take place in current directory. 
